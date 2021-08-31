@@ -1,12 +1,15 @@
 import React from "react";
 import "./App.css";
 import HooksFucn from "./Hooks/HooksFucn";
+import StateClass from "./State/StateClass";
+import StateFun from "./State/StateFun";
 
 function App() {
   return (
     <div className="App">
-    
-      <HooksFucn /> 
+      <HooksFucn />
+      <StateFun />
+      <StateClass />
     </div>
   );
 }
