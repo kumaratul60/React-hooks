@@ -7,7 +7,7 @@ function HooksFucn() {
   //   useEffect is used to perform "side effects" on functional components
   //   useEffect takes two arguments, first is arrow function and second is list of dependency array which is optional
 
-  // On Every single render
+  // mount  On Every single render
   useEffect(() => {
     console.log("I re-rendered");
   });
@@ -23,14 +23,13 @@ function HooksFucn() {
   useEffect(() => {
     // console.log(`The name changed!:${name}`);
     // return () => {
-    //   // cleanup...
+    // cleanup...
     //   console.log("We unmountd");
     // };
   }, [name]);
 
   // Follows the same rules, expect this handles the unmounting on a component! - componentWillUnmount Alternative
   useEffect(() => {
-    
     console.log("attech listner");
     window.addEventListener("resize", updateWindowWidth);
 
@@ -41,6 +40,28 @@ function HooksFucn() {
     // };
   }, []);
   // [] -> limit the render rate
+
+  // -------------------------------------------------------------------------------------------------------------------------
+
+  // runs after every rerender ---> This renders every time our app renders and at initial render. But we don't want to render each time, this can cause an infinite loop and we should avoid this.
+  useEffect(() => {
+    console.log("I run after every render and at initial render");
+  });
+
+  // runs at initial render ---> This only runs once when the component is mounted or loaded.
+  useEffect(() => {
+    console.log("I only run once");
+  }, []);
+
+  // useEffect comes with a cleanup function that helps unmount the component,  componentWillUnmount Alternative
+
+  // When we need to clear a subscription or clear timeout, we can use cleanup functions. When we run the code, the code first will clean up the old state, then will run the updated state. This can help us to remove unnecessary behavior or prevent memory leaking issues.
+  useEffect(() => {
+    // effect;
+    return () => {
+      // cleanup;
+    };
+  }, [name]);
 
   const updateWindowWidth = () => {
     setWindowWidth(window.innerWidth);
