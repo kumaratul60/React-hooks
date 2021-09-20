@@ -1,5 +1,13 @@
 import React, { Component } from "react";
 
+
+
+/**
+ A component is like a human. It has three phases:
+1- Mounting: born (being rendered)
+2- Updating: growing (being updated)
+3- Unmounting: Dying (being removed)
+ */
 export default class StateClass extends Component {
   constructor(props) {
     super(props);

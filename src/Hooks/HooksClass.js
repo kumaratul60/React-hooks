@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 
+
+/**
+ 
+ */
+
 export default class HooksClass extends Component {
   constructor(props) {
     //access of this in a subclass before super() call is not allowed, because in ES6
