@@ -1,0 +1,9 @@
+useEffect use cases:
+
+
+Running once on mount: fetch API data
+Running on state change: validating input field
+Running on state change: live filtering
+Running on state change: trigger animation on new array value
+Running on props change: update paragraph list on fetched API data update
+Running on props change: updating fetched API data to get BTC updated price.
